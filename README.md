@@ -91,6 +91,7 @@ La aplicación se integra con una API externa para obtener los datos del CV medi
    ```bash
    npm run dev
    ```
+   La aplicación estará disponible en: http://localhost:3000/
 
 5. **Construir para producción**
    ```bash
@@ -112,7 +113,7 @@ npm run deploy
 ```
 
 ### Variables de Entorno en Producción
-- `VITE_API_URL`: URL de la API (configurada para producción)
+- `VITE_API_URL=http://localhost:4000`: URL de la API (configurada para producción)
 
 ## 🧪 Testing
 
@@ -123,17 +124,6 @@ npm run test
 npm run test:ui
 ```
 
-## ✅ Requisitos Cumplidos
-
-- [x] **Visualización**: CV completo con todas las secciones profesionales
-- [x] **Datos Personales**: Información de contacto y perfil
-- [x] **Formación**: Listado de estudios y certificaciones
-- [x] **Experiencia**: Trayectoria laboral detallada
-- [x] **Habilidades**: Competencias técnicas y blandas
-- [x] **API REST**: Integración completa con endpoints del CV
-- [x] **Repositorio GitHub**: Código fuente completo
-- [x] **Despliegue**: Configuración para GitHub Pages
-
 ## 📝 Licencia
 
 Proyecto profesional desarrollado como portafolio personal y currículum vitae online.
@@ -142,4 +132,3 @@ Proyecto profesional desarrollado como portafolio personal y currículum vitae o
 
 **Enlaces del Proyecto:**
 - 📁 **Repositorio**: https://github.com/sisroberto801/frontend
-- 🌐 **Aplicación en vivo**: https://sisroberto801.github.io/frontend
