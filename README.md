@@ -1,4 +1,4 @@
-# 📝 Proyecto Final: Gestión de Tareas con React
+# 📝 Portafolio Personal: Currículum Vitae Online
 
 ## 👤 Datos del Estudiante
 **Nombre:** Roberto Carlos Olguin Ledezma  
@@ -6,34 +6,30 @@
 
 ---
 
-Aplicación web de "Lista de Tareas" (To-Do List) desarrollada con React, TypeScript y Material-UI, que permite gestionar el ciclo de vida completo de tareas mediante una API REST externa.
+Aplicación web de "Currículum Vitae" desarrollada con React, TypeScript y Material-UI, que permite mostrar información profesional de forma interactiva y moderna mediante una API externa.
 
 ## 🚀 Funcionalidades Implementadas
 
-### ✅ CRUD Completo
-- **Visualización**: Listado dinámico de todas las tareas con opciones de edición y eliminación
-- **Creación**: Formulario para añadir nuevas tareas mediante `POST /api/tasks`
-- **Edición**: Modificación del contenido de tareas existentes mediante `PUT /api/tasks/:id`
-- **Eliminación**: Borrado de tareas individuales mediante `DELETE /api/tasks/:id`
-
-### 🔄 Gestión de Estados
-- Alternancia entre estados "Pendiente" y "Finalizada" mediante `PATCH /api/tasks/:id`
-- Diferenciación visual con estilos y colores distintos
-- Contadores separados para tareas pendientes y completadas
+### ✅ Visualización de CV
+- **Datos Personales**: Tarjeta interactiva con información de contacto y perfil profesional
+- **Formación Académica**: Listado dinámico de estudios y certificaciones
+- **Experiencia Laboral**: Sección detallada de trayectoria profesional
+- **Habilidades**: Visualización de competencias técnicas y blandas
 
 ### 🎨 Interfaz de Usuario
-- Diseño moderno con Material-UI
-- Tarjetas interactivas para cada tarea
-- Botones flotantes y diálogos modales
-- Notificaciones con Snackbar para feedback de acciones
+- Diseño moderno y profesional con Material-UI
+- Tarjetas elegantes para cada sección del CV
+- Navegación intuitiva y responsiva
 - Estados de carga y manejo de errores
+- Tema personalizado con colores profesionales
 
 ## 🛠️ Stack Tecnológico
 
 - **Frontend**: React 19.2.5 + TypeScript
 - **UI Framework**: Material-UI (MUI) v9.0.0
-- **HTTP Client**: Axios con interceptores de autenticación
+- **HTTP Client**: Axios para consumo de API externa
 - **Validación**: Zod para tipado y validación de datos
+- **Enrutamiento**: React Router DOM para navegación
 - **Build Tool**: Vite
 - **Testing**: Playwright
 - **Despliegue**: GitHub Pages
@@ -43,44 +39,29 @@ Aplicación web de "Lista de Tareas" (To-Do List) desarrollada con React, TypeSc
 ```
 src/
 ├── components/
-│   ├── task/
-│   │   ├── task-header/       # Componentes del header
-│   │   │   ├── TaskHeader.tsx        # Header con título y botón Nueva Tarea
-│   │   │   └── TaskFilterButtons.tsx  # Botones de filtro (Todas, Pendiente, Completado)
-│   │   ├── task-body/         # Componentes del cuerpo
-│   │   │   ├── TaskItem.tsx          # Componente individual de tarea
-│   │   │   └── TaskList.tsx          # Listado de tareas
-│   │   └── task-modal/        # Componentes del modal
-│   │       ├── TaskForm.tsx          # Formulario de creación/edición
-│   │       └── TaskModal.tsx         # Modal contenedor
-│   └── index.ts              # Exportación de componentes
+│   └── cv/                  # Componentes del CV
+│       ├── PersonalDataCard.tsx    # Tarjeta de datos personales
+│       ├── EducationList.tsx       # Listado de formación académica
+│       └── index.ts               # Exportación de componentes
 ├── hooks/
-│   └── useTask.ts            # Hook personalizado para API
+│   └── useCV.ts            # Hook personalizado para API del CV
 ├── lib/
 │   └── axiosCliente.ts       # Configuración de Axios
-├── models/
-│   └── task.model.ts         # Tipos y validaciones
+├── interfaces/
+│   └── cv.ts                # Tipos de datos del CV
 ├── pages/
-│   └── private/
-│       └── TaskPage.tsx      # Página principal de tareas
+│   └── CVPage.tsx           # Página principal del CV
+├── routes/
+│   └── AppRouter.tsx        # Configuración de rutas
 └── config/
-    └── env.ts                # Variables de entorno
+    └── env.ts               # Variables de entorno
 ```
 
 ## 🔗 Integración con API
 
-La aplicación se integra con la API externa [TaskDone](https://taskdone-node.onrender.com/api-docs/) mediante los siguientes endpoints:
+La aplicación se integra con una API externa para obtener los datos del CV mediante el siguiente endpoint:
 
-- `GET /api/tasks` - Obtener todas las tareas
-- `POST /api/tasks` - Crear nueva tarea
-- `PUT /api/tasks/:id` - Actualizar tarea completa
-- `PATCH /api/tasks/:id` - Actualizar estado de tarea
-- `DELETE /api/tasks/:id` - Eliminar tarea
-
-### 🔐 Autenticación
-- Auto-login con credenciales de prueba
-- Token JWT almacenado en localStorage
-- Interceptor Axios para incluir token en requests
+- `GET /cv` - Obtener todos los datos del CV (información personal y formación académica)
 
 ## 🚀 Instalación y Ejecución
 
@@ -91,8 +72,8 @@ La aplicación se integra con la API externa [TaskDone](https://taskdone-node.on
 ### Pasos
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/sisroberto801/diplomado-react-proyecto.git
-   cd diplomado-react-proyecto
+   git clone https://github.com/sisroberto801/frontend.git
+   cd frontend
    ```
 
 2. **Instalar dependencias**
@@ -144,21 +125,21 @@ npm run test:ui
 
 ## ✅ Requisitos Cumplidos
 
-- [x] **Visualización**: Listado dinámico con opciones de gestión
-- [x] **Creación**: Formulario funcional para nuevas tareas
-- [x] **Edición**: Modificación de tareas existentes
-- [x] **Eliminación**: Borrado de tareas individuales
-- [x] **Gestión de Estados**: Alternancia Pendiente/Finalizada
-- [x] **API REST**: Integración completa con endpoints especificados
+- [x] **Visualización**: CV completo con todas las secciones profesionales
+- [x] **Datos Personales**: Información de contacto y perfil
+- [x] **Formación**: Listado de estudios y certificaciones
+- [x] **Experiencia**: Trayectoria laboral detallada
+- [x] **Habilidades**: Competencias técnicas y blandas
+- [x] **API REST**: Integración completa con endpoints del CV
 - [x] **Repositorio GitHub**: Código fuente completo
 - [x] **Despliegue**: Configuración para GitHub Pages
 
 ## 📝 Licencia
 
-Proyecto educativo desarrollado como parte del Diplomado de React.
+Proyecto profesional desarrollado como portafolio personal y currículum vitae online.
 
 ---
 
 **Enlaces del Proyecto:**
-- 📁 **Repositorio**: https://github.com/sisroberto801/diplomado-react-proyecto
-- 🌐 **Aplicación en vivo**: https://sisroberto801.github.io/diplomado-react-proyecto
+- 📁 **Repositorio**: https://github.com/sisroberto801/frontend
+- 🌐 **Aplicación en vivo**: https://sisroberto801.github.io/frontend
